@@ -5,22 +5,15 @@ Crown Clothing is a large e-commerce website built using React, Redux, Hooks, Gr
 ## App Flow
 
 __Welcome to Crown Clothing__
-!["Login"](https://github.com/declan-wu/tinyapp/blob/master/public/login.png)
+!["Homepage"](https://github.com/declan-wu/crwn-clothing/blob/master/public/Screen%20Shot%202019-09-04%20at%2010.57.09%20AM.png)
+
+
+__Shop Items__
+!["shopping page"](https://github.com/declan-wu/crwn-clothing/blob/master/public/Screen%20Shot%202019-09-04%20at%2010.59.21%20AM.png)
 
 __Register__
-!["Register"](https://github.com/declan-wu/tinyapp/blob/master/public/register.png)
+!["Register"](https://github.com/declan-wu/crwn-clothing/blob/master/public/Screen%20Shot%202019-09-04%20at%2011.03.16%20AM.png)
 
-__Create New URLS__
-!["Create New URLS"](https://github.com/declan-wu/tinyapp/blob/master/public/newurl.png)
-
-__Edit and Copy URLS__
-!["Edit and Copy URLS"](https://github.com/declan-wu/tinyapp/blob/master/public/editurl.png)
-
-__My URLs__
-!["MyURLs"](https://github.com/declan-wu/tinyapp/blob/master/public/myurls.png)
-
-__Error Pages__
-!["error pages"](https://github.com/declan-wu/tinyapp/blob/master/public/oops.png)
 
 ## Getting Started
 
