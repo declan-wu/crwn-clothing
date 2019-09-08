@@ -15,7 +15,6 @@ const userReducer = (state = INITIAL_STATE, action) => {
 };
 
 export default userReducer;
-
 // reducer is a function that takes two property: state object - last state or cur state; and action - type of string value
 
 // action object is just a type and payload

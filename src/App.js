@@ -12,37 +12,39 @@ import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up
 import { setCurrentUser } from "./redux/user/user.actions";
 
 class App extends React.Component {
-  unsubscribeFormAuth = null;
+  unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFormAuth = auth.onAuthStateChanged(async userAuth => {
+    const { setCurrentUser } = this.props;
+
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
+
         userRef.onSnapshot(snapShot => {
-          this.setState({
-            currentUser: {
-              id: snapShot.id,
-              ...snapShot.data()
-            }
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data()
           });
         });
-      } else {
-        this.setState({ currentUser: userAuth });
       }
+
+      setCurrentUser(userAuth);
     });
   }
 
   componentWillUnmount() {
-    this.unsubscribeFormAuth();
+    this.unsubscribeFromAuth();
   }
+
   render() {
     return (
       <div>
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/shop" component={ShopPage} />
-          <Route exact path="/signin" component={SignInAndSignUpPage} />
+          <Route path="/shop" component={ShopPage} />
+          <Route path="/signin" component={SignInAndSignUpPage} />
         </Switch>
       </div>
     );
@@ -50,7 +52,7 @@ class App extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user)) // here, setCurrentUser(user) returns action object, and we want to dispatch that action to all reducers.
+  setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
 export default connect(
