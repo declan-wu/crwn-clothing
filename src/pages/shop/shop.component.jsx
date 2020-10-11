@@ -1,12 +1,14 @@
 import React from "react";
-import SHOP_DATA from "./shop.data.js";
+// import SHOP_DATA from "./shop.data.js";
+import Restaurants_Data from "./restaurants.data";
+
 import CollectionPreview from "../../components/collection-preview/collection-preview.component";
 
 class ShopPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      collections: SHOP_DATA
+      collections: Restaurants_Data,
       //   {
       //   id: 1,
       //   title: "Hats",
